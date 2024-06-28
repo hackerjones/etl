@@ -99,6 +99,14 @@ namespace etl
     //*************************************************************************
     /// Constructor
     //*************************************************************************
+    shared_message()
+      : p_rcmessage(ETL_NULLPTR)
+    {     
+    }
+    
+    //*************************************************************************
+    /// Constructor
+    //*************************************************************************
     shared_message(etl::ireference_counted_message& rcm)
     {
       p_rcmessage = &rcm;
@@ -216,8 +224,6 @@ namespace etl
     }
 
   private:
-
-    shared_message() ETL_DELETE;
 
     etl::ireference_counted_message* p_rcmessage; ///< A pointer to the reference  counted message.
   };

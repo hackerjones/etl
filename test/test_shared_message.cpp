@@ -220,6 +220,14 @@ namespace
     };
 
     //*************************************************************************
+    TEST(test_default_constructor)
+    {
+      etl::shared_message sm;
+
+      CHECK_FALSE(sm.is_valid());
+    }
+
+    //*************************************************************************
     TEST(test_move_constructor_with_default_constructed_message)
     {
       etl::fixed_sized_memory_block_allocator<pool_message_parameters::max_size,
